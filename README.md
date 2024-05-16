@@ -1,10 +1,10 @@
 # Qinglong 备份脚本
 
 用青龙面板 备份 思源笔记
-	whyour/qinglong
-  b3log/siyuan
+- whyour/qinglong
+- b3log/siyuan
 
-- 发送登录认证请求到指定的 Qinglong 地址。
+- 发送登录认证请求到思源地址。
 - 导出数据并下载备份文件。
 - 构造保存文件名，文件名包含日期时间信息。
 - 删除旧备份文件，保留指定天数内的备份文件。
