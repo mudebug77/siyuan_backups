@@ -3,7 +3,6 @@
 用青龙面板 备份 思源笔记
 - whyour/qinglong
 - b3log/siyuan
-- siyuan-note
 
 - 发送登录认证请求到思源地址。
 - 导出数据并下载备份文件。
@@ -18,14 +17,20 @@
 
 ## 使用方法
 
-1. 在脚本中设置变量：
-   - `QINGLONG_URL`: 思源 的地址。
-   - `AUTH_CODE`: 认证代码。
-   - `SAVE_PATH`: 备份文件保存路径。
-   - `PREFIX`: 备份文件名前缀。
-   - `DAYS_TO_KEEP`: 保留备份文件的天数，设置为 0 时不删除。
-2. 青龙依赖管理 python 添加 requests 依赖库
-3. 在青龙面板中设置定期执行即可
+1. 在脚本中修改变量：
+    # 思源地址
+    QINGLONG_URL = "http://192.168.0.8:6806"
+    #思源密码
+    AUTH_CODE = "123456"
+    #备份储存路径
+    SAVE_PATH = "/mnt/1/_backups/"
+    #备份文件前缀(自动删除文件标识)
+    PREFIX = "backups_siyuan_"
+    # 设置为0时不删除备份文件 (天)
+    DAYS_TO_KEEP = 30
+   
+3. 青龙依赖管理 python 添加 requests 依赖库
+4. 在青龙面板中设置定期执行即可
 
 ![image](https://github.com/mudebug77/siyuan_backups/assets/34656102/fd7a6def-51f1-47a3-bf8f-471e1958a816)
 
