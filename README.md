@@ -1,4 +1,4 @@
-# Qinglong 备份脚本
+# 思源笔记备份脚本
 
 用青龙面板 备份 思源笔记
 - whyour/qinglong
