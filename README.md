@@ -27,4 +27,5 @@
 2. 青龙依赖管理 python 添加 requests 依赖库
 3. 在青龙面板中设置定期执行即可
 
-![image](https://github.com/mudebug77/siyuan_backups/assets/34656102/6325be5a-cb00-465e-8226-429e1720a3d3)
+![image](https://github.com/mudebug77/siyuan_backups/assets/34656102/fd7a6def-51f1-47a3-bf8f-471e1958a816)
+
