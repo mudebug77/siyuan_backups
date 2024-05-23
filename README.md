@@ -29,7 +29,8 @@
     PREFIX = "backups_siyuan_"
     # 设置为0时不删除备份文件 (天)
     DAYS_TO_KEEP = 30
-   
+```
+
 3. 青龙依赖管理 python 添加 requests 依赖库
 4. 在青龙面板中设置定期执行即可
 
