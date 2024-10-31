@@ -7,7 +7,7 @@ QINGLONG_URL = "http://192.168.0.8:6806"
 #思源密码
 AUTH_CODE = "123456"
 #备份储存路径
-SAVE_PATH = "/mnt/1/_backups/"
+SAVE_PATH = "/_backups/"
 #备份文件前缀
 PREFIX = "backups_siyuan_"
 # 设置为0时不删除备份文件 (天)
@@ -33,13 +33,14 @@ def export_data(cookies):
     else:
         return None
 
-def download_file(url, destination):
-    response = requests.get(url)
+def download_file(url,cookies, destination):
+    response = requests.get(url,timeout=360,cookies=cookies)
     if response.status_code == 200:
         with open(destination, 'wb') as f:
             f.write(response.content)
         return True
     else:
+        print(f"response.status_code: {response.status_code}")
         return False
 
 def delete_old_backups(backup_dir, days_to_keep):
@@ -68,6 +69,7 @@ def main():
     if export_result is None or export_result["code"] != 0:
         print("导出数据失败")
         return
+    #print(export_result)
 
     # 构造保存文件名
     now = datetime.now()
@@ -76,7 +78,7 @@ def main():
 
     # 下载文件
     zip_url = QINGLONG_URL + export_result["data"]["zip"]
-    if download_file(zip_url, destination):
+    if download_file(zip_url,cookies, destination):
         print("文件下载成功")
     else:
         print("文件下载失败")
